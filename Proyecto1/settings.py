@@ -28,6 +28,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['csheroku5.herokuapp.com']
 
+
 # Application definition
 
 INSTALLED_APPS = [
