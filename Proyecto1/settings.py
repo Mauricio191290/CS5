@@ -27,7 +27,7 @@ SECRET_KEY = 'Secret'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False 
 
-ALLOWED_HOSTS = ["csheroku5.herokuapp.com"]
+ALLOWED_HOSTS = ['csheroku5.herokuapp.com']
 
 
 # Application definition
