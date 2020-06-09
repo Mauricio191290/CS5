@@ -26,7 +26,7 @@ SECRET_KEY= 'SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['csheroku5.herokuapp.com/']
 
 
 # Application definition
@@ -53,6 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Proyecto1.urls'
+
 SITE_ID = 1
 
 REST_FRAMEWORK = {
