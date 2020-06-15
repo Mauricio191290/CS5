@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
+    'Login',
 ]
 
 MIDDLEWARE = [
@@ -96,8 +97,13 @@ WSGI_APPLICATION = 'Proyecto1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dd117uv2sk3ci1',
+        'USER': 'vntmyxiglddvzy',
+        'PASSWORD': 'e59fbd5a23a6ca81dfa55f49a05f6a7a42cce3286390ca9d54f543cb67d8e119',
+        'HOST':'ec2-35-174-127-63.compute-1.amazonaws.com',
+        'PORT': '5432',
+
     }
 }
 
