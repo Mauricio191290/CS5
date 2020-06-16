@@ -8,5 +8,5 @@ from Example2 import views
 
 
 urlpatterns = [
-    re_path(r'Example2/$', views.Example2List.as_view()),
+    re_path(r'Example2', views.Example2List.as_view()),
 ]
