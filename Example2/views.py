@@ -21,7 +21,9 @@ class Example2List(APIView):
 
     def post (self, request, format=None):
         serializer = ExampleSerializers(data = request.data)
+        print("Ando en el post sin verificar")
         if serializer.is_valid():
             serializer.save()
             datas = serializer.data
+            print("Ya estoy verificado")
             return Response(datas)
