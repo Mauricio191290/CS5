@@ -6,7 +6,7 @@ from rest_framework import status,generics
 from django.http import Http404
 from django.shortcuts import get_object_or_404
 
-#Modelos importaedos
+#Modelos importaedos copia del 1
 from Example2.models import Example2
 
 #Serializers importados

@@ -25,3 +25,4 @@ class ExampleList(APIView):
             serializer.save()
             datas = serializer.data
             return Response(datas)
+            
