@@ -27,15 +27,17 @@ class ExampleList(APIView):
             return Response(datas)
             
 class Example1Detail(APIView):
-    def get_objects(self, id):
+    def get_object(self, id):
         try:
             return Example1.objects.get(pk = id)
         except Example1.DoesNotExist:
             return 404
 
-    def get(self, request, format = None):
+    def get(self, request, id, format = None):
         print("Entro en get")
         example1 = self.get_object(id)
-        print(example1)
-        serializer = ExampleSerializers(example1)
-        return Response(serializer.data)
+        if example1 == 404:
+            return Response ("No hay datos")
+        else:
+            serializer = ExampleSerializers(example1)
+            return Response(serializer.data)
