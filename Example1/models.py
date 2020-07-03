@@ -10,3 +10,5 @@ class Example1(models.Model):
 
     class Meta:
         db_table = 'Example1'
+
+    
