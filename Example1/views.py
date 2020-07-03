@@ -36,5 +36,6 @@ class Example1Detail(APIView):
     def get(self, request, format = None):
         print("Entro en get")
         example1 = self.get_object(id)
+        print(example1)
         serializer = ExampleSerializers(example1)
         return Response(serializer.data)
