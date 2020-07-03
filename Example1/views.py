@@ -42,13 +42,13 @@ class Example1Detail(APIView):
             serializer = ExampleSerializers(example1)
             return Response(serializer.data)
 
-def put (self,request,id,format=None):
-        method = self.get_object(id)
-        if method == 404:
-            serializer = ExampleSerializers(method,data= request.data)
-            return Response("No hay nada")
-
+def put(self,request,id,format=None):
+        try:
+            methodP=Example1.objects.get(pk=id)
+        except Example1.DoesNotExist:
+            return Response("no hay datos")
+        serializer=ExampleSerializers(methodP,data=request.data)
         if serializer.is_valid():
             serializer.save()
-            datas = serializer.data
+            datas=serializer.data
             return Response(datas)
