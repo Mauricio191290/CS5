@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,12 +25,15 @@ STATIC_URL = '/static/'
 
 #Solucion de las URL
 #APPEND_SLASH = False
-
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', cast=bool)
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')
+EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int)
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY= 'SECRET_KEY'
+#SECRET_KEY= config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 
 ALLOWED_HOSTS = ['csheroku5.herokuapp.com']
 
@@ -102,11 +106,11 @@ WSGI_APPLICATION = 'Proyecto1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dd117uv2sk3ci1',
-        'USER': 'vntmyxiglddvzy',
-        'PASSWORD': 'e59fbd5a23a6ca81dfa55f49a05f6a7a42cce3286390ca9d54f543cb67d8e119',
-        'HOST':'ec2-35-174-127-63.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
 
     }
 }
