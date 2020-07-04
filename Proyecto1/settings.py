@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'Login',
     'Example1',
     'Example2',
+    'Register',
 ]
 
 MIDDLEWARE = [
