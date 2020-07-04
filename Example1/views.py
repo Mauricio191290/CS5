@@ -43,8 +43,8 @@ class Example1Detail(APIView):
             return Response(serializer.data)
 
     def put (self,request,id,format=None):
-        otro = self.get_object(id)
-        serializer = ExampleSerializers(otro,data= request.data)
+        mtdput = self.get_object(id)
+        serializer = ExampleSerializers(mtdput,data= request.data)
         if serializer.is_valid():
             serializer.save()
             datas = serializer.data
