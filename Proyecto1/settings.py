@@ -22,7 +22,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+#Solucion de las URL
+#APPEND_SLASH = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
